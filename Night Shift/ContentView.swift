@@ -12,25 +12,40 @@ struct ContentView: View {
         HStack {
             VStack {
                 VStack(alignment: .leading, spacing: 0.0){
-                    HStack {
-                        
-                        Text(Image(systemName: "moon.stars")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        Text("Nightly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                    // MARK: Nightly Tasks
+                    Group{
+                        HStack {
+                            Text(Image(systemName: "moon.stars")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                            Text("Nightly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                        }
+                        Text("Check windows")
+                        Text("Check doors")
+                        Text("Check safe is locked")
+                        Text("Check the mailbox")
+                        Text("Inspect security cameras")
+                        Text("Clear ice from side walks")
+                        Text("Document strange and unusual occurances")
                     }
-                    Text("Check windows")
-                    Text("Check doors")
-                    Text("Check safe is locked")
-                    Text("Check the mailbox")
-                    Text("Inspect security cameras")
-                    Text("Clear ice from side walks")
-                    Text("Document strange and unusual occurances")
+                    Divider()
+                    // MARK: Weekly Tasks
+                    Group{
                     HStack {
                         Text(Image(systemName: "sunset")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                         Text("Weekly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                     }
+                    Text("Check inside all vacant rooms")
+                    Text("Walk perimeter of property")
+                    }
+                    Divider()
+                    //MARK: Monthly Tasks
+                    Group{
+                        
                     HStack{
                         Text(Image(systemName: "calendar")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                         Text("Monthly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
+                    }
+                    Text("Test security alarm")
+                    Text("Test smoke alarm")
                     }
                 }
                 .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
