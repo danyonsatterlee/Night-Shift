@@ -7,51 +7,26 @@
 
 import SwiftUI
 let nightlyTasks = ["Check windows","Check doors", "Check safe is locked", "Check the mailbox", "Inspect security cameras", "Clearice from side walks", "Document strange and unusual occurances"]
+
+let weeklyTasks = ["Check inside all vacant rooms", "Walk perimeter of property"]
+
+let monthlyTasks = ["Test security alarm", "Test smoke alarm"]
 struct ContentView: View {
     var body: some View {
-        HStack {
-            VStack {
-                VStack(alignment: .leading, spacing: 0.0){
-                    // MARK: Nightly Tasks
-                    Group{
-                        HStack {
-                            Text(Image(systemName: "moon.stars")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                            Text("Nightly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        }
-                        List(nightlyTasks, id: \.self, rowContent: {
-                            taskName in
-                            Text(taskName)
-                    })
-                    }
-                    Divider()
-                    // MARK: Weekly Tasks
-                    Group{
-                    HStack {
-                        Text(Image(systemName: "sunset")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        Text("Weekly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                    }
-                    Text("Check inside all vacant rooms")
-                    Text("Walk perimeter of property")
-                    }
-                    Divider()
-                    //MARK: Monthly Tasks
-                    Group{
-                        
-                    HStack{
-                        Text(Image(systemName: "calendar")).font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                        Text("Monthly Tasks").font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).bold().foregroundColor(/*@START_MENU_TOKEN@*/.orange/*@END_MENU_TOKEN@*/).padding(.vertical).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
-                    }
-                    Text("Test security alarm")
-                    Text("Test smoke alarm")
-                    }
-                }
-                .foregroundColor(.blue)
-                Spacer()
-            }
-            .padding([.top, .leading])
-            Spacer()
-        }
-    
+        List {
+            ForEach(nightlyTasks, id: \.self, content: {
+                task in
+                Text(task)
+            })
+            ForEach(weeklyTasks, id: \.self, content: {
+                task in
+                Text(task)
+            })
+            ForEach(monthlyTasks, id: \.self, content: {
+                task in
+                Text(task)
+            })
+        } 
     }
 }
 
