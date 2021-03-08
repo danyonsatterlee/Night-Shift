@@ -14,19 +14,34 @@ let monthlyTasks = ["Test security alarm", "Test smoke alarm"]
 struct ContentView: View {
     var body: some View {
         List {
-            ForEach(nightlyTasks, id: \.self, content: {
-                task in
-                Text(task)
-            })
-            ForEach(weeklyTasks, id: \.self, content: {
-                task in
-                Text(task)
-            })
-            ForEach(monthlyTasks, id: \.self, content: {
-                task in
-                Text(task)
-            })
-        } 
+            Section(header: HStack {
+                Image(systemName: "moon.stars")
+                Text("Nightly Tasks")
+            }.foregroundColor(.blue)) {
+                ForEach(nightlyTasks, id: \.self, content: {
+                    task in
+                    Text(task)
+                })
+            }
+            Section(header: HStack {
+                Image(systemName: "sunset")
+                Text("Weekly Tasks")
+            }.foregroundColor(.blue)) {
+                ForEach(weeklyTasks, id: \.self, content: {
+                    task in
+                    Text(task)
+                })
+            }
+            Section(header: HStack {
+                Image(systemName: "calendar")
+                Text("Monthly Tasks")
+            }.foregroundColor(.blue)) {
+                ForEach(monthlyTasks, id: \.self, content: {
+                    task in
+                    Text(task)
+                })
+            }
+        }.listStyle(GroupedListStyle())
     }
 }
 
