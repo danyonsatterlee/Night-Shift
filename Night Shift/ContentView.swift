@@ -13,35 +13,41 @@ let weeklyTasks = ["Check inside all vacant rooms", "Walk perimeter of property"
 let monthlyTasks = ["Test security alarm", "Test smoke alarm"]
 struct ContentView: View {
     var body: some View {
-        List {
-            Section(header: HStack {
-                Image(systemName: "moon.stars")
-                Text("Nightly Tasks")
-            }.foregroundColor(.blue)) {
-                ForEach(nightlyTasks, id: \.self, content: {
-                    task in
-                    Text(task)
-                })
-            }
-            Section(header: HStack {
-                Image(systemName: "sunset")
-                Text("Weekly Tasks")
-            }.foregroundColor(.blue)) {
-                ForEach(weeklyTasks, id: \.self, content: {
-                    task in
-                    Text(task)
-                })
-            }
-            Section(header: HStack {
-                Image(systemName: "calendar")
-                Text("Monthly Tasks")
-            }.foregroundColor(.blue)) {
-                ForEach(monthlyTasks, id: \.self, content: {
-                    task in
-                    Text(task)
-                })
-            }
-        }.listStyle(GroupedListStyle())
+        NavigationView {
+                        NavigationLink(destination: VStack {
+                            List {
+                                Section(header: HStack {
+                                    Image(systemName: "moon.stars")
+                                    Text("Nightly Tasks")
+                                }.foregroundColor(.blue)) {
+                                    ForEach(nightlyTasks, id: \.self, content: {
+                                        task in
+                                        Text(task)
+                                    })
+                                }
+                                Section(header: HStack {
+                                    Image(systemName: "sunset")
+                                    Text("Weekly Tasks")
+                                }.foregroundColor(.blue)) {
+                                    ForEach(weeklyTasks, id: \.self, content: {
+                                        task in
+                                        Text(task)
+                                    })
+                                }
+                                Section(header: HStack {
+                                    Image(systemName: "calendar")
+                                    Text("Monthly Tasks")
+                                }.foregroundColor(.blue)) {
+                                    ForEach(monthlyTasks, id: \.self, content: {
+                                        task in
+                                        Text(task)
+                                    })
+                                }
+                            }.listStyle(GroupedListStyle())
+                          
+                        }) { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/ }
+                    }
+        
     }
 }
 
