@@ -14,7 +14,7 @@ let monthlyTasks = ["Test security alarm", "Test smoke alarm"]
 struct ContentView: View {
     var body: some View {
         NavigationView {
-                        NavigationLink(destination: VStack {
+                      VStack {
                             List {
                                 Section(header: HStack {
                                     Image(systemName: "moon.stars")
@@ -22,7 +22,7 @@ struct ContentView: View {
                                 }.foregroundColor(.blue)) {
                                     ForEach(nightlyTasks, id: \.self, content: {
                                         task in
-                                        Text(task)
+                                        NavigationLink(task, destination: Text(task))
                                     })
                                 }
                                 Section(header: HStack {
@@ -31,7 +31,7 @@ struct ContentView: View {
                                 }.foregroundColor(.blue)) {
                                     ForEach(weeklyTasks, id: \.self, content: {
                                         task in
-                                        Text(task)
+                                        NavigationLink(task, destination: Text(task))
                                     })
                                 }
                                 Section(header: HStack {
@@ -40,12 +40,12 @@ struct ContentView: View {
                                 }.foregroundColor(.blue)) {
                                     ForEach(monthlyTasks, id: \.self, content: {
                                         task in
-                                        Text(task)
+                                        NavigationLink(task, destination: Text(task))
                                     })
                                 }
-                            }.listStyle(GroupedListStyle())
+                            }.listStyle(GroupedListStyle()).navigationTitle("Home")
                           
-                        }.navigationTitle("List")) { Text("Go to the list") }.navigationTitle("Home")
+                        }
         }
         
     }
