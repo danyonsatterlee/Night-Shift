@@ -45,8 +45,8 @@ struct ContentView: View {
                                 }
                             }.listStyle(GroupedListStyle())
                           
-                        }) { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/ }
-                    }
+                        }.navigationTitle("List")) { Text("Go to the list") }.navigationTitle("Home")
+        }
         
     }
 }
